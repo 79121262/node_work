@@ -3,7 +3,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
   .state('demo', {
     url: '/demo',
     cache: false,
-    templateUrl: 'demo/views/demo.html',
+    templateUrl: 'views/demo.html',
     controller: 'demoCtrl'
   });
 });
