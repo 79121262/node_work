@@ -1,7 +1,7 @@
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
   .state('demo', {
-    url: '/refundOrderManage',
+    url: '/demo',
     cache: false,
     templateUrl: 'demo/views/demo.html',
     controller: 'demoCtrl'
