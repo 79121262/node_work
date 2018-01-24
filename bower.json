@@ -28,7 +28,8 @@
     "angular-ui-router": "0.2.18",
     "jquery": "1.10.2",
     "nprogress": "~0.2.0",
-    "bootstrap-daterangepicker": "~2.1.24"
+    "bootstrap-daterangepicker": "~2.1.24",
+    "labjs":"2.0.3"
   },
   "devDependencies": {
     "bootstrap": "3"

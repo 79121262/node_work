@@ -1,7 +1,8 @@
-var app = angular.module('starter', []);
+var app = angular.module('starter', ['ui.router']);
+//项目启动时执行
 app.run(
-  ['$http', function($http) {
-  
-	alert("--");
+  ['$rootScope', '$location', '$http',
+    function($rootScope, $location,$http) {
 
-}]);
+    }
+])

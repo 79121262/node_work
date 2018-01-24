@@ -1,5 +1,5 @@
-app.controller('demoCtrl', ['$http', function($http) {
+app.controller('demoCtrl', ['$rootScope','$scope', function($rootScope, $scope) {
      $scope.firstName = "John";
-    $scope.lastName = "Doe";
-    
+     $scope.lastName = "Doe";
+    //alert($scope.lastName);
 }]);

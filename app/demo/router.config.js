@@ -1,9 +1,8 @@
-app.config(function($stateProvider, $urlRouterProvider) {
-  $stateProvider
-  .state('demo', {
+  app.config(function ($stateProvider,$urlRouterProvider) {
+  $stateProvider.state('demo', {
     url: '/demo',
     cache: false,
-    templateUrl: 'views/demo.html',
+    templateUrl: 'demo/views/demo.html',
     controller: 'demoCtrl'
   });
 });

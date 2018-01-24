@@ -20,8 +20,8 @@ path.build = './app/';
 gulp.task('connect', function() {
     connect.server({
         root: path.build,
-        port: 9000,
-		fallback:path.build+'index.html'
+        port: 9000
+		//fallback:path.build+'index.html'
     });
 });
 

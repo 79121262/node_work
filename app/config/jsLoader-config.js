@@ -12,4 +12,8 @@ $LAB
 	.script(libMap.demo)
     .wait(function() {
        //alert("---");
+         // start app by manual
+         //html不用加入这段代码  <div ng-app="starter" >
+               var appDom = document.getElementById("ng-starter");
+               angular.bootstrap(appDom, ['starter']);
     });
