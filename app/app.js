@@ -12,7 +12,7 @@ var appComponents = angular.module('starter.components', []);
 
 
 var app = angular.module('starter', ['ui.router','starter.controllers','starter.directive','starter.services','starter.components']);
-//项目启动时执行
+//项目启动时执行 浏览器第一次载入时
 app.run(
   ['$rootScope', '$location', '$http',
     function($rootScope, $location,$http) {

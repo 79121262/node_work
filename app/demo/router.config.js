@@ -6,4 +6,3 @@ appCtrl.config(function ($stateProvider,$urlRouterProvider) {
     controller: 'demoCtrl'
   });
 });
-
