@@ -4,37 +4,58 @@ var jshint = require('gulp-jshint');
 var  concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var  uglify = require('gulp-uglify');
-
-
-var gulp = require('gulp'), 
-//serve
+var gulp = require('gulp'),
 connect = require('gulp-connect');
-gulp.task('hello', function() {
-  console.log('Hello World!');
-});
+
 
 var path = {};
-
 path.build = './app/';
+path.app = './app/';
+var repos = ['common'];
 
+// cmd  运行gulp 命令默认启动
+gulp.task('default', ['connect',"devBuild"]);
+function build() {
+    gulp.start(['controller', 'service']);
+}
 gulp.task('connect', function() {
     connect.server({
         root: path.build,
         port: 9000
-		//fallback:path.build+'index.html'
+		//fallback:path.build+'index.html' //设置首页
     });
 });
-
-gulp.task('build', function() {
-   gulp.src(['app'])
-                .pipe(zip('app.zip'))
-                .pipe(gulp.dest('abb'));
-
-minifyScript("./app/*.js","./app/","abc");
-
+//开发环境 构建
+gulp.task('devBuild', function() {
+    build()
 })
-
-gulp.task('default', ['hello',"connect"]);
+gulp.task('build', function() {
+    del(['./build']).then(paths => {
+        build()
+    })
+})
+//controller build
+gulp.task("controller", function() {
+     for (var i = 0; i < repos.length; i++) {
+            var repo = repos[i]
+            var src = path.app + repo + '/controllers/**/*.js'
+            var dest = path.build + repo + '/js/controllers';
+            (function(src, dest) {
+                minifyScript(src, dest, 'main.js')
+            })(src, dest)
+      }
+})
+//service build
+gulp.task("service", function() {
+     for (var i = 0; i < repos.length; i++) {
+            var repo = repos[i]
+            var src = path.app + repo + '/service/**/*.js'
+            var dest = path.build + repo + '/js/service';
+            (function(src, dest) {
+                minifyScript(src, dest, 'service.js')
+            })(src, dest)
+      }
+})
 
 //压缩js
 function minifyScript(src, dest, name) {

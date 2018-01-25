@@ -29,7 +29,8 @@
     "jquery": "1.10.2",
     "nprogress": "~0.2.0",
     "bootstrap-daterangepicker": "~2.1.24",
-    "labjs":"2.0.3"
+    "labjs":"2.0.3",
+    "ckeditor":"4.8.0"
   },
   "devDependencies": {
     "bootstrap": "3"
