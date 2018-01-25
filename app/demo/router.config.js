@@ -1,4 +1,4 @@
-  app.config(function ($stateProvider,$urlRouterProvider) {
+appCtrl.config(function ($stateProvider,$urlRouterProvider) {
   $stateProvider.state('demo', {
     url: '/demo',
     cache: false,
