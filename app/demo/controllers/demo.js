@@ -6,7 +6,7 @@ appCtrl.controller('demoCtrl', ['$rootScope','$scope','http', function($rootScop
             language: 'zh-cn',
             uiColor: '#EEEEEE'
         });
-
+CKEDITOR.config.extraPlugins = 'image2';
         CKEDITOR.config.toolbar = 'Full';
         //工具栏
         CKEDITOR.config.toolbar_Full = [
@@ -29,11 +29,12 @@ appCtrl.controller('demoCtrl', ['$rootScope','$scope','http', function($rootScop
        CKEDITOR.config.filebrowserImageUploadUrl = "/proxy/demo-web/file/fileUpload?isAttachment=0";
 
        CKEDITOR.config.filebrowserUploadUrl ='/proxy/demo-web/file/fileUpload?isAttachment=1';
-       CKEDITOR.config.disableObjectResizing = false;
+       CKEDITOR.config.disableObjectResizing = true;
+       CKEDITOR.config.image2_disableResizer = false;
         http.get('/proxy/demo-web/user/find', {
              loginName:'andy'
         }, function(argument) {
-            alert(JSON.stringify(argument));
+            //alert(JSON.stringify(argument));
         });
      $scope.data = function() {
         $scope.myVar = !$scope.myVar;
